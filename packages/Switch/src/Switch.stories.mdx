@@ -1,0 +1,170 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import './styles.css'
+import { Switch } from './Switch'
+
+<Meta title="Switch" component={Switch}/>
+
+# @uistudio/switch
+An unstyled, lightweight, keyboard-friendly switch component for your React app.
+
+export const Template = (args) => <Switch {...args}/>
+
+## Installation
+With npm:
+
+```bash
+npm install @uistudio/switch
+```
+
+With yarn:
+
+```bash
+yarn add @uistudio/switch
+```
+
+## With label
+export const WithLabel = Template.bind({})
+WithLabel.args = {
+  label: 'Enable Notifications',
+}
+
+export const WithLabelAndDescription = Template.bind({})
+WithLabelAndDescription.args = {
+  label: 'Enable Notifications',
+  description: 'Get notified when something important happens.',
+}
+
+<Canvas>
+  <Story name="With label">
+    {WithLabel}
+  </Story>
+</Canvas>
+
+## With label and description
+<Canvas>
+  <Story name="With label and description">
+    {WithLabelAndDescription}
+  </Story>
+</Canvas>
+
+
+## Styling
+
+Helper classes are available for styling the component.
+
+| class                                    | description                                                                                                   |
+|------------------------------------------|---------------------------------------------------------------------------------------------------------------|
+| `uis-switch`                             | The switch container                                                                                          |
+| `uis_switch__button`                     | The switch button or input element                                                                            |
+| `uis_switch__button--checked`            | The switch is enabled                                                                                         |
+| `uis_switch__toggle--indicator`          | The switch toggle indicator                                                                                   |
+| `uis-switch__label`                      | The switch label                                                                                              |
+| `uis-switch__description`                | The switch description                                                                                        |
+| `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
+
+
+## Example Usage
+
+<div style={{ marginTop: 30 }}>
+  <Switch
+    checked={false}
+    label='Enable Notifications'
+    description='Receive notifications when you have new messages.'
+    onChecked={() => {}}/>
+</div>
+
+```jsx
+// Switch.jsx
+
+import { Switch } from '@uistudio/switch';
+import styled from 'styled-components';
+
+const StyledSwitch = styled.div`
+
+  uis-switch {
+      all: revert;
+      display: flex;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+  }
+
+  .uis-switch__button input[type="checkbox"] {
+      display: none;
+  }
+
+  .uis-switch__button {
+      border: none;
+      border-radius: 40px;
+      background-color: #bdc3c7;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2px;
+      margin-right: 14px;
+  }
+
+  .uis-switch__button.uis-switch__button--checked {
+      background-color: #3498db;
+  }
+
+  .uis-switch__label {
+      color: #4D4D4D;
+      padding-bottom: 4px;
+      font-size: 14px;
+  }
+
+  .uis-switch__toggle-indicator {
+      transition: all 0.3s;
+      display: block;
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border-radius: 50%;
+  }
+
+  .uis-switch__button--checked .uis-switch__toggle-indicator {
+      background-color: white;
+      transform: translateX(100%);
+  }
+
+  .uis-switch-label-description-container {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+  }
+
+  .uis-switch__description {
+      color: #707070;
+      line-height: 1.4;
+  }
+
+  .uis-switch__button:hover {
+      cursor: pointer;
+  }
+
+  .uis-switch__button:focus {
+      cursor: pointer;
+      outline: 2px solid #3498db;
+      outline-offset: 5px;
+  }
+`;
+
+const [checked, setChecked] = useState(false);
+
+<StyledSwitch>
+  <Switch
+    checked={checked}
+    label='Enable Notifications'
+    description='Receive notifications when you have new messages.'
+    onChecked={(prev) => setChecked(!prev)}/>
+  />
+</StyledSwitch>
+```
+
+
+## License
+MIT License
+
+## Accessibility
+
+Follows the [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices/#switch).
+
