@@ -8,7 +8,7 @@ export const keyCode = {
   UP: 'ArrowUp',
   RIGHT: 'ArrowRight',
   DOWN: 'ArrowDown',
-  TAB: 'Tab'
+  TAB: 'Tab',
 };
 
 export const classes = {
@@ -20,6 +20,5 @@ export const classes = {
   treeItemFocus: 'uis-tree-item--focus',
   treeItemSelected: 'uis-tree-item--selected',
   treeItemExpanded: 'uis-tree-item--expanded',
-  treeItemCollapsed: 'uis-tree-item--collapsed'
+  treeItemCollapsed: 'uis-tree-item--collapsed',
 };
-

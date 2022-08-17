@@ -21,7 +21,7 @@
   "private": false,
   "scripts": {
     "build": "rollup -c",
-    "test": "jest --config jest.config.ts --watchAll",
+    "test": "jest --config jest.config.ts --watchAll --coverage",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
