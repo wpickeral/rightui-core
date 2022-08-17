@@ -28,11 +28,11 @@
   "files": [
     "dist"
   ],
-  "tags": [
+  "keywords": [
     "react",
     "ui",
     "treeview",
     "filetree",
-    "accessibility"
+    "file explorer"
   ]
 }
