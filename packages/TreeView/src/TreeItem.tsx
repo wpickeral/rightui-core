@@ -36,14 +36,34 @@ export type TreeItemProps = {
    * A callback function that is called when the TreeItem is expanded.
    */
   onExpand?: (event: React.SyntheticEvent<HTMLLIElement, Event> | React.KeyboardEvent) => void;
+  /**
+   * An icon to render when an expandable TreeItem is expanded.
+   */
+  expandIcon?: JSX.Element;
+  /**
+   * An icon to render when an expandable TreeItem is collapsed.
+   */
+  collapseIcon?: JSX.Element;
 }
 
-export const ChevronRightSvg = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => {
+export const ChevronRightSVG = () => {
   return (
-      <svg {...props} xmlns='http://www.w3.org/2000/svg' height='18px'
+      <svg className='uis-tree-item-expand-icon' data-testid='expand-icon'
+           xmlns='http://www.w3.org/2000/svg' height='18px'
            viewBox='0 0 24 24' width='18px' fill='currentColor'>
         <path d='M0 0h24v24H0V0z' fill='none'/>
         <path d='M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z'/>
+      </svg>
+  );
+};
+
+export const ChevronDownSVG = () => {
+  return (
+      <svg className='uis-tree-item-collapse-icon' data-testid='collapse-icon'
+           xmlns='http://www.w3.org/2000/svg' height='18px'
+           viewBox='0 0 24 24' width='18px' fill='currentColor'>
+        <path d='M24 24H0V0h24v24z' fill='none' opacity='.87'/>
+        <path d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41z'/>
       </svg>
   );
 };
@@ -88,6 +108,8 @@ export function TreeItem({
   onExpand,
   ariaLevel,
   indent = 16,
+  expandIcon = <ChevronDownSVG/>,
+  collapseIcon = <ChevronRightSVG/>,
 }: TreeItemProps) {
 
   const treeItemRef = useRef<HTMLLIElement | null>(null);
@@ -424,10 +446,8 @@ export function TreeItem({
             <>
               <div className='uis-tree-item__content'>
                 {content}
-                <ChevronRightSvg
-                    data-testid='uis-tree-item-chevron-right'
-                    className='uis-tree-item-chevron-right'
-                    aria-hidden='true'/>
+                {expanded && expandIcon}
+                {!expanded && collapseIcon}
               </div>
               {expanded && <ul
                 style={{marginLeft: indent}}

@@ -23,6 +23,7 @@ const App = () => (
   </Tree>
 );
 ```
+
 ## Documentation
 
 [View documentation](https://uistudio-core-storybook.vercel.app/?path=/docs/tree-view--aria-label)
@@ -31,15 +32,17 @@ const App = () => (
 
 Helper classes are available for styling the component.
 
-| class                     | description                                          |
-|---------------------------|------------------------------------------------------|
-| `uis-tree`                | The root node                                        |
-| `uis-tree__label`         | The tree label if the `label` prop is not undefined  |
-| `uis-tree-item`           | The treeitem container                               |
-| `uis-tree-item__content`  | The treeitem content                                 |
-| `uis-tree-item--focus`    | Available on the treeitem that has focus             |
-| `uis-tree-item--selected` | Available on the treeitem that is currently selected |
-| `uis-tree-item--expanded` | Available on expandable treeitems that are expanded. |
+| class                         | description                                          |
+|-------------------------------|------------------------------------------------------|
+| `uis-tree`                    | The root node                                        |
+| `uis-tree__label`             | The tree label if the `label` prop is not undefined  |
+| `uis-tree-item`               | The treeitem container                               |
+| `uis-tree-item__content`      | The treeitem content                                 |
+| `uis-tree-item--focus`        | Available on the treeitem that has focus             |
+| `uis-tree-item--selected`     | Available on the treeitem that is currently selected |
+| `uis-tree-item--expanded`     | Available on expandable treeitems that are expanded. |
+| 'uis-tree-item-expand-icon'   | The expand icon                                      |
+| 'uis-tree-item-collapse-icon' | The collapse icon                                    |
 
 ## Accessibility
 
