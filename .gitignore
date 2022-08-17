@@ -7,3 +7,4 @@ dist
 storybook-static
 packages/TreeView/coverage/
 /coverage/
+/packages/**.jest-test-results.json

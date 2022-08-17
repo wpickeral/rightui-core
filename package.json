@@ -27,6 +27,7 @@
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
     "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-jest": "^6.5.10",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-webpack4": "^6.5.10",
     "@storybook/builder-webpack5": "^6.5.10",
@@ -55,5 +56,8 @@
     "switch",
     "treeview",
     "accessibility"
-  ]
+  ],
+  "dependencies": {
+    "@storybook/addon-docs": "^6.5.10"
+  }
 }
