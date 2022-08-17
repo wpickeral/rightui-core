@@ -41,8 +41,8 @@ Helper classes are available for styling the component.
 | `uis-tree-item--focus`        | Available on the treeitem that has focus             |
 | `uis-tree-item--selected`     | Available on the treeitem that is currently selected |
 | `uis-tree-item--expanded`     | Available on expandable treeitems that are expanded. |
-| 'uis-tree-item-expand-icon'   | The expand icon                                      |
-| 'uis-tree-item-collapse-icon' | The collapse icon                                    |
+| `uis-tree-item-expand-icon`   | The expand icon                                      |
+| `uis-tree-item-collapse-icon` | The collapse icon                                    |
 
 ## Accessibility
 
