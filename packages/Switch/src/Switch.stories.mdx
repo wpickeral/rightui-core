@@ -79,8 +79,6 @@ Helper classes are available for styling the component.
 import { Switch } from '@uistudio/switch';
 import styled from 'styled-components';
 
-const [checked, setChecked] = useState(false);
-
 const StyledSwitch = styled.div`
 
   uis-switch {
@@ -149,6 +147,8 @@ const StyledSwitch = styled.div`
       outline-offset: 5px;
   }
 `;
+
+const [checked, setChecked] = useState(false);
 
 <StyledSwitch>
   <Switch
