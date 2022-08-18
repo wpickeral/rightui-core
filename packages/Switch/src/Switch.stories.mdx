@@ -9,19 +9,6 @@ An unstyled, lightweight, keyboard-friendly switch component for your React app.
 
 export const Template = (args) => <Switch {...args}/>
 
-## Installation
-With npm:
-
-```bash
-npm install @uistudio/switch
-```
-
-With yarn:
-
-```bash
-yarn add @uistudio/switch
-```
-
 ## With label
 export const WithLabel = Template.bind({})
 WithLabel.args = {
@@ -47,6 +34,29 @@ WithLabelAndDescription.args = {
   </Story>
 </Canvas>
 
+## Installation
+With npm:
+
+```bash
+npm install @uistudio/switch
+```
+
+With yarn:
+
+```bash
+yarn add @uistudio/switch
+```
+
+## Props
+| Prop                  | Type                                            | Default | Description                                                                                                             |
+|-----------------------|-------------------------------------------------|---------|-------------------------------------------------------------------------------------------------------------------------|
+| `label`               | `string`                                        | -       | Label text to display next to the switch.                                                                               |
+| `description?`        | `string`                                        | -       | The description for the switch.                                                                                         |
+| `onChecked`           | `(checked: boolean) => void`                    | -       | A callback for when the switch is toggled. The callback will be called with the new checked state.                      |
+| `checked`             | `boolean`                                       | false   | Whether the switch is checked                                                                                           |
+| `inputCheckbox?`      | `boolean`                                       | false   | If true, the switch will be rendered as an input element with the type="checkbox". A button element is used by default. |
+| `inputCheckboxProps?` | `React.InputHTMLAttributes<HTMLInputElement>`   | -       | Props to pass to the input element.                                                                                     |
+| `buttonProps?`        | `React.ButtonHTMLAttributes<HTMLButtonElement>` | -       | Props to pass to the button element                                                                                     |
 
 ## Styling
 
@@ -63,103 +73,9 @@ Helper classes are available for styling the component.
 | `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 
-## Example Usage
+## Example
 
-<div style={{ marginTop: 30 }}>
-  <Switch
-    checked={false}
-    label='Enable Notifications'
-    description='Receive notifications when you have new messages.'
-    onChecked={() => {}}/>
-</div>
-
-```jsx
-// Switch.jsx
-
-import { Switch } from '@uistudio/switch';
-import styled from 'styled-components';
-
-const StyledSwitch = styled.div`
-
-  .uis-switch {
-      all: revert;
-      display: flex;
-      align-items: center;
-      font-family: 'Roboto', sans-serif;
-  }
-
-  .uis-switch__button input[type="checkbox"] {
-      display: none;
-  }
-
-  .uis-switch__button {
-      border: none;
-      border-radius: 40px;
-      background-color: #bdc3c7;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      padding: 2px;
-      margin-right: 14px;
-  }
-
-  .uis-switch__button.uis-switch__button--checked {
-      background-color: #3498db;
-  }
-
-  .uis-switch__label {
-      color: #4D4D4D;
-      padding-bottom: 4px;
-      font-size: 14px;
-  }
-
-  .uis-switch__toggle-indicator {
-      transition: all 0.3s;
-      display: block;
-      width: 18px;
-      height: 18px;
-      background-color: white;
-      border-radius: 50%;
-  }
-
-  .uis-switch__button--checked .uis-switch__toggle-indicator {
-      background-color: white;
-      transform: translateX(100%);
-  }
-
-  .uis-switch-label-description-container {
-      display: flex;
-      flex-direction: column;
-      font-size: 14px;
-  }
-
-  .uis-switch__description {
-      color: #707070;
-      line-height: 1.4;
-  }
-
-  .uis-switch__button:hover {
-      cursor: pointer;
-  }
-
-  .uis-switch__button:focus {
-      cursor: pointer;
-      outline: 2px solid #3498db;
-      outline-offset: 5px;
-  }
-`;
-
-const [checked, setChecked] = useState(false);
-
-<StyledSwitch>
-  <Switch
-    checked={checked}
-    label='Enable Notifications'
-    description='Receive notifications when you have new messages.'
-    onChecked={(prev) => setChecked(!prev)}/>
-  />
-</StyledSwitch>
-```
-
+View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 
 ## License
 MIT License

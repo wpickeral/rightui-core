@@ -9,7 +9,7 @@ export type SwitchProps = {
    */
   checked: boolean;
   /**
-   * The label for the switch.
+   * Label text to display next to the switch.
    */
   label: string;
   /**
@@ -25,11 +25,11 @@ export type SwitchProps = {
    */
   inputCheckbox?: boolean;
   /**
-   * Props to pass to the input element. Accepts an object with any props that can be passed to the input element.
+   * Props to pass to the input element.
    */
   inputCheckboxProps?: React.InputHTMLAttributes<HTMLInputElement>;
   /**
-   * Props to pass to the button element. Accepts an object with any props that can be passed to the button element.
+   * Props to pass to the button element.
    */
   buttonProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
