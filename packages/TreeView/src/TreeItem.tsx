@@ -27,7 +27,7 @@ export type TreeItemProps = {
   /**
    * One or more TreeItems to render as children of the TreeItem component.
    */
-  children?: ReactElement<typeof TreeItem> | ReactElement<typeof TreeItem>[];
+  children?: ReactNode | ReactNode[];
   /**
    * A callback function that is called when the TreeItem is selected.
    */
