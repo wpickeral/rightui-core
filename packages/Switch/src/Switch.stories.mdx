@@ -9,31 +9,6 @@ An unstyled, lightweight, keyboard-friendly switch component for your React app.
 
 export const Template = (args) => <Switch {...args}/>
 
-## With label
-export const WithLabel = Template.bind({})
-WithLabel.args = {
-  label: 'Enable Notifications',
-}
-
-export const WithLabelAndDescription = Template.bind({})
-WithLabelAndDescription.args = {
-  label: 'Enable Notifications',
-  description: 'Get notified when something important happens.',
-}
-
-<Canvas>
-  <Story name="With label">
-    {WithLabel}
-  </Story>
-</Canvas>
-
-## With label and description
-<Canvas>
-  <Story name="With label and description">
-    {WithLabelAndDescription}
-  </Story>
-</Canvas>
-
 ## Installation
 With npm:
 
@@ -73,9 +48,33 @@ Helper classes are available for styling the component.
 | `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 
-## Example
-
+## With label
 View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
+
+export const WithLabel = Template.bind({})
+WithLabel.args = {
+  label: 'Enable Notifications',
+}
+
+export const WithLabelAndDescription = Template.bind({})
+WithLabelAndDescription.args = {
+  label: 'Enable Notifications',
+  description: 'Get notified when something important happens.',
+}
+
+<Canvas>
+  <Story name="With label">
+    {WithLabel}
+  </Story>
+</Canvas>
+
+## With label and description
+<Canvas>
+  <Story name="With label and description">
+    {WithLabelAndDescription}
+  </Story>
+</Canvas>
+
 
 ## License
 MIT License
