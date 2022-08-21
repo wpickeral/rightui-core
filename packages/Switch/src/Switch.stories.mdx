@@ -7,8 +7,6 @@ import { Switch } from './Switch'
 # @uistudio/switch
 An unstyled, lightweight, keyboard-friendly switch component for your React app.
 
-export const Template = (args) => <Switch {...args}/>
-
 ## Installation
 With npm:
 
@@ -20,6 +18,24 @@ With yarn:
 
 ```bash
 yarn add @uistudio/switch
+```
+
+## Usage
+```tsx
+import {useState} from 'react';
+import { Switch } from '@uistudio/switch'
+
+const App = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <Switch
+      label="Enable Notifications"
+      checked={checked}
+      onChecked={checked => setChecked(checked)}
+    />
+  )
+}
 ```
 
 ## Props
@@ -48,7 +64,6 @@ Helper classes are available for styling the component.
 | `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 
-## With label
 View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 
 export const WithLabel = Template.bind({})
