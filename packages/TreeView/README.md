@@ -26,7 +26,7 @@ const App = () => (
 
 ## Documentation
 
-[View full documentation](https://uistudio-core-storybook.vercel.app/?path=/docs/tree-view--aria-label)
+[View full documentation](https://uistudio-core-storybook.vercel.app/?path=/docs/tree-view--with-visible-label)
 
 ## Accessibility
 
