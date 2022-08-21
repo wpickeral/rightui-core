@@ -16,12 +16,12 @@ export type TreeItemProps = {
    */
   indent?: number;
   /**
-   * The aria-level for the Tree Item component.
+   * The aria-level for the TreeItem component.
    * @see https://www.w3.org/TR/wai-aria-practices-1.1/#treeview
    */
   ariaLevel: number,
   /**
-   * The content of the Tree Item component.
+   * The content of the TreeItem component.
    */
   content: ReactNode;
   /**
