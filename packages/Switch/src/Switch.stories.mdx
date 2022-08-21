@@ -64,22 +64,17 @@ Helper classes are available for styling the component.
 | `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 
-export const Template = (args) => <Switch {...args}/>
+View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 
-## Examples
-
-### With label
 export const WithLabel = Template.bind({})
 WithLabel.args = {
   label: 'Enable Notifications',
-  checked: false,
 }
 
 export const WithLabelAndDescription = Template.bind({})
 WithLabelAndDescription.args = {
   label: 'Enable Notifications',
   description: 'Get notified when something important happens.',
-  checked: false,
 }
 
 <Canvas>
@@ -88,14 +83,13 @@ WithLabelAndDescription.args = {
   </Story>
 </Canvas>
 
-### With label and description
+## With label and description
 <Canvas>
   <Story name="With label and description">
     {WithLabelAndDescription}
   </Story>
 </Canvas>
 
-View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 
 ## License
 MIT License
