@@ -72,19 +72,19 @@ Note: A label is required for accessibility. You can use the `ariaLabel` prop to
 
 ## Styling
 
-Helper classes are available for styling the components.
+Helper classes are available for styling the component.
 
-| class                     | description                                               |
-|---------------------------|-----------------------------------------------------------|
-| `uis-tree`                | A `ul` with `role="tree"`.                                |
-| `uis-tree__label`         | The label for the tree.                                   |
-| `uis_tree-item`           | A `li` element with `role="tree-item"`                    |
-| `uis-tree-item__content`  | The child element of the treeitem.                        |
-| `uis-tree--subtree`       | A `ul` with `role="group"`.  Represents any nested trees. |
-| `uis-tree-item--focus`    | Available when the treeitem has focus                     |
-| `uis-tree-item--selected` | Available when the treeitem is selected                   |
-| `uis-tree-item--expanded` | Available when the treeitem is expanded                   |
-
+| class                         | description                                          |
+|-------------------------------|------------------------------------------------------|
+| `uis-tree`                    | The root node                                        |
+| `uis-tree__label`             | The tree label if the `label` prop is not undefined  |
+| `uis-tree-item`               | The treeitem container                               |
+| `uis-tree-item__content`      | The treeitem content                                 |
+| `uis-tree-item--focus`        | Available on the treeitem that has focus             |
+| `uis-tree-item--selected`     | Available on the treeitem that is currently selected |
+| `uis-tree-item--expanded`     | Available on expandable treeitems that are expanded. |
+| `uis-tree-item-expand-icon`   | The expand icon                                      |
+| `uis-tree-item-collapse-icon` | The collapse icon                                    |
 
 ## With visible label
 View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
