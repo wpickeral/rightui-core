@@ -23,28 +23,27 @@ With yarn:
 yarn add @uistudio/treeview
 ```
 
+
 ## Usage
-```javascript
+```tsx
 import {Tree, TreeItem} from '@uistudio/treeview';
 
 export function Example() {
   return (
-      <Tree label='Items'>
-        <TreeItem label="Item 1">
-          <TreeItem label="Item 1.1" />
-          <TreeItem label="Item 1.2" />
-        </TreeItem>
-        <TreeItem label="Item 2">
-          <TreeItem label="Item 2.1" />
-          <TreeItem label="Item 2.2" />
-        </TreeItem>
-      </Tree>
+    <Tree label='Items'>
+      <TreeItem label="Item 1">
+        <TreeItem content="Item 1.1" />
+        <TreeItem content="Item 1.2" />
+      </TreeItem>
+      <TreeItem content="Item 2">
+        <TreeItem content="Item 2.1" />
+        <TreeItem content="Item 2.2" />
+      </TreeItem>
+    </Tree>
   )
 }
 
 ```
-
-
 
 ## Tree props
 
@@ -86,7 +85,7 @@ Helper classes are available for styling the components.
 | `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 ## Examples
-## With visible label
+### With visible label
 View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
 <Canvas>
   <Story name='With visible label'>
@@ -109,7 +108,7 @@ View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
   </Story>
 </Canvas>
 
-## With aria-label
+### With aria-label
 <Canvas>
   <Story name='With aria-label'>
     <Tree ariaLabel='Explorer'>
@@ -131,7 +130,7 @@ View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
   </Story>
 </Canvas>
 
-## With icons
+### With icons
 <Canvas>
   <Story name='With icons'>
     <Tree labelElementType='h3' label='User Management'>

@@ -7,33 +7,6 @@ import { Switch } from './Switch'
 # @uistudio/switch
 An unstyled, lightweight, keyboard-friendly switch component for your React app.
 
-export const Template = (args) => <Switch {...args}/>
-
-## With label
-export const WithLabel = Template.bind({})
-WithLabel.args = {
-  label: 'Enable Notifications',
-}
-
-export const WithLabelAndDescription = Template.bind({})
-WithLabelAndDescription.args = {
-  label: 'Enable Notifications',
-  description: 'Get notified when something important happens.',
-}
-
-<Canvas>
-  <Story name="With label">
-    {WithLabel}
-  </Story>
-</Canvas>
-
-## With label and description
-<Canvas>
-  <Story name="With label and description">
-    {WithLabelAndDescription}
-  </Story>
-</Canvas>
-
 ## Installation
 With npm:
 
@@ -45,6 +18,24 @@ With yarn:
 
 ```bash
 yarn add @uistudio/switch
+```
+
+## Usage
+```tsx
+import {useState} from 'react';
+import { Switch } from '@uistudio/switch'
+
+const App = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <Switch
+      label="Enable Notifications"
+      checked={checked}
+      onChecked={checked => setChecked(checked)}
+    />
+  )
+}
 ```
 
 ## Props
@@ -73,7 +64,36 @@ Helper classes are available for styling the component.
 | `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 
-## Example
+export const Template = (args) => <Switch {...args}/>
+
+## Examples
+
+### With label
+export const WithLabel = Template.bind({})
+WithLabel.args = {
+  label: 'Enable Notifications',
+  checked: false,
+}
+
+export const WithLabelAndDescription = Template.bind({})
+WithLabelAndDescription.args = {
+  label: 'Enable Notifications',
+  description: 'Get notified when something important happens.',
+  checked: false,
+}
+
+<Canvas>
+  <Story name="With label">
+    {WithLabel}
+  </Story>
+</Canvas>
+
+### With label and description
+<Canvas>
+  <Story name="With label and description">
+    {WithLabelAndDescription}
+  </Story>
+</Canvas>
 
 View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 
