@@ -30,4 +30,4 @@ const App = () => (
 
 ## Accessibility
 
-Follows the [WAI-ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices).
+Follows the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/).
