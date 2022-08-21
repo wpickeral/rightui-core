@@ -24,10 +24,6 @@ const App = () => (
 );
 ```
 
-## Example
-
-View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
-
 ## Documentation
 
 [View full documentation](https://uistudio-core-storybook.vercel.app/?path=/docs/switch--with-label)
