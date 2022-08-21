@@ -27,3 +27,6 @@ const App = () => (
 ## Documentation
 
 [View full documentation](https://uistudio-core-storybook.vercel.app/?path=/docs/switch--with-label)
+
+## Accessibility
+Follows the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/switch/).
