@@ -74,18 +74,19 @@ Note: A label is required for accessibility. You can use the `ariaLabel` prop to
 
 Helper classes are available for styling the components.
 
-| class                                    | description                                                                                                   |
-|------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| `uis-switch`                             | The switch container                                                                                          |
-| `uis_switch__button`                     | The switch button or input element                                                                            |
-| `uis_switch__button--checked`            | The switch is enabled                                                                                         |
-| `uis_switch__toggle--indicator`          | The switch toggle indicator                                                                                   |
-| `uis-switch__label`                      | The switch label                                                                                              |
-| `uis-switch__description`                | The switch description                                                                                        |
-| `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
+| class                     | description                                               |
+|---------------------------|-----------------------------------------------------------|
+| `uis-tree`                | A `ul` with `role="tree"`.                                |
+| `uis-tree__label`         | The label for the tree.                                   |
+| `uis_tree-item`           | A `li` element with `role="tree-item"`                    |
+| `uis-tree-item__content`  | The child element of the treeitem.                        |
+| `uis-tree--subtree`       | A `ul` with `role="group"`.  Represents any nested trees. |
+| `uis-tree-item--focus`    | Available when the treeitem has focus                     |
+| `uis-tree-item--selected` | Available when the treeitem is selected                   |
+| `uis-tree-item--expanded` | Available when the treeitem is expanded                   |
 
-## Examples
-### With visible label
+
+## With visible label
 View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
 <Canvas>
   <Story name='With visible label'>
@@ -108,7 +109,7 @@ View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
   </Story>
 </Canvas>
 
-### With aria-label
+## With aria-label
 <Canvas>
   <Story name='With aria-label'>
     <Tree ariaLabel='Explorer'>
@@ -130,7 +131,7 @@ View in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
   </Story>
 </Canvas>
 
-### With icons
+## With icons
 <Canvas>
   <Story name='With icons'>
     <Tree labelElementType='h3' label='User Management'>
