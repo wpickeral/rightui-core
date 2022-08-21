@@ -2,4 +2,4 @@
 
 A collection of unstyled and keyboard friendly UI components for your React App.
 
-[View components](https://uistudio-core-storybook.vercel.app)
+[View full documentation](https://uistudio-core-storybook.vercel.app)
