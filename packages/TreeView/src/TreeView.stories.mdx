@@ -30,16 +30,13 @@ import {Tree, TreeItem} from '@uistudio/treeview';
 
 export function Example() {
   return (
-    <Tree label='Items'>
-      <TreeItem label="Item 1">
-        <TreeItem content="Item 1.1" />
-        <TreeItem content="Item 1.2" />
-      </TreeItem>
-      <TreeItem content="Item 2">
-        <TreeItem content="Item 2.1" />
-        <TreeItem content="Item 2.2" />
-      </TreeItem>
-    </Tree>
+  <Tree label='Menu'>
+    <TreeItem content="Options" ariaLevel={1}>
+      <TreeItem content="Option 1" ariaLevel={2}/>
+      <TreeItem content="Option 2" ariaLevel={2}/>
+    </TreeItem>
+    <TreeItem content="Settings" ariaLevel={1}/>
+  </Tree>
   )
 }
 
