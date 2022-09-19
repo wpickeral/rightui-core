@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660768342317" clover="3.2.0">
-  <project timestamp="1660768342317" name="All files">
+<coverage generated="1663615704612" clover="3.2.0">
+  <project timestamp="1663615704612" name="All files">
     <metrics statements="17" coveredstatements="14" conditionals="26" coveredconditionals="20" methods="3" coveredmethods="2" elements="46" coveredelements="36" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1"/>
     <file name="Switch.tsx" path="/Users/williampickeral/WebstormProjects/uistudio-core/packages/Switch/src/Switch.tsx">
       <metrics statements="17" coveredstatements="14" conditionals="26" coveredconditionals="20" methods="3" coveredmethods="2"/>
