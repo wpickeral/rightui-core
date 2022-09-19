@@ -1,6 +1,6 @@
 {
   "name": "@uistudio/treeview",
-  "version": "0.2.32",
+  "version": "0.2.33",
   "repository": "https://github.com/wpickeral/uistudio-core/tree/main/packages/TreeView",
   "description": "An unstyled and keyboard friendly Tree View component for your React App.",
   "main": "dist/cjs/index.js",
@@ -13,10 +13,14 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "outDir": "dist",
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@rollup/plugin-commonjs": "^22.0.2",

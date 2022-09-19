@@ -1,6 +1,6 @@
 {
   "name": "@uistudio/switch",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "repository": "https://github.com/wpickeral/uistudio-core/tree/main/packages/Switch",
   "description": "An unstyled and keyboard friendly Switch component for your React App.",
   "main": "dist/cjs/index.js",
@@ -13,6 +13,9 @@
     "storybook": "start-storybook -p 6006 -c ./.storybook",
     "build-storybook": "build-storybook"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

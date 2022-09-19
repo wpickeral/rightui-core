@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A collection of unstyled and keyboard friendly UI components for your React App.",
   "private": true,
+  "outDir": "dist",
   "workspaces": [
     "packages/*"
   ],
@@ -17,7 +18,7 @@
     "testPackages": "yarn test-switch & yarn test-treeview",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "build-storybook-docs": "build-storybook --docs",
-    "npm-publish": "yarn workspace @uistudio/switch publish && yarn workspace @uistudio/treeview publish"
+    "publishAll": "yarn workspace @uistudio/switch npm publish --access public && yarn workspace @uistudio/treeview npm publish --access public"
   },
   "keywords": [
     "react",
