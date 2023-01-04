@@ -1,17 +1,17 @@
-# @uistudio/treeview
+# @rightui/treeview
 
 An unstyled, lightweight, keyboard-friendly Tree View component for your React app.
 
 ## Installation
 
-`yarn add @uistudio/treeview`
+`yarn add @rightui/treeview`
 
-`npm i @uistudio/treeview`
+`npm i @rightui/treeview`
 
 ## Usage
 
 ```jsx 
-import { Tree, TreeItem } from '@uistudio/treeview';
+import { Tree, TreeItem } from '@rightui/treeview';
 
 const App = () => (
   <Tree label='Menu'>
@@ -26,7 +26,7 @@ const App = () => (
 
 ## Documentation
 
-[View full documentation](https://uistudio-core-storybook.vercel.app/?path=/docs/tree-view--with-visible-label)
+[View full documentation](https://rightui-core-storybook.vercel.app/?path=/docs/tree-view--with-visible-label)
 
 ## Accessibility
 

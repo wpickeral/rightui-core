@@ -1,5 +1,5 @@
 {
-  "name": "uistudio-core",
+  "name": "rightui-core",
   "version": "0.0.1",
   "description": "A collection of unstyled and keyboard friendly UI components for your React App.",
   "private": true,
@@ -8,17 +8,17 @@
     "packages/*"
   ],
   "scripts": {
-    "test-switch": "yarn workspace @uistudio/switch test --coverage",
-    "build-switch": "yarn workspace @uistudio/switch build",
-    "storybook-switch": "yarn workspace @uistudio/switch storybook",
-    "test-treeview": "yarn workspace @uistudio/treeview test --coverage",
-    "build-treeview": "yarn workspace @uistudio/treeview build",
-    "storybook-treeview": "yarn workspace @uistudio/treeview storybook",
+    "test-switch": "yarn workspace @rightui/switch test --coverage",
+    "build-switch": "yarn workspace @rightui/switch build",
+    "storybook-switch": "yarn workspace @rightui/switch storybook",
+    "test-treeview": "yarn workspace @rightui/treeview test --coverage",
+    "build-treeview": "yarn workspace @rightui/treeview build",
+    "storybook-treeview": "yarn workspace @rightui/treeview storybook",
     "buildPackages": "yarn build-switch & yarn build-treeview",
     "testPackages": "yarn test-switch & yarn test-treeview",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "build-storybook-docs": "build-storybook --docs",
-    "publishAll": "yarn workspace @uistudio/switch npm publish --access public && yarn workspace @uistudio/treeview npm publish --access public"
+    "publish-all": "yarn workspace @rightui/switch npm publish --access public && yarn workspace @rightui/treeview npm publish --access public"
   },
   "keywords": [
     "react",

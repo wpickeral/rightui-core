@@ -1,7 +1,7 @@
 {
-  "name": "@uistudio/switch",
+  "name": "@rightui/switch",
   "version": "0.1.26",
-  "repository": "https://github.com/wpickeral/uistudio-core/tree/main/packages/Switch",
+  "repository": "https://github.com/wpickeral/rightui-core/tree/main/packages/Switch",
   "description": "An unstyled and keyboard friendly Switch component for your React App.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
