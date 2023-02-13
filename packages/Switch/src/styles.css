@@ -14,7 +14,7 @@
     border-radius: 40px;
     background-color: #bdc3c7;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 18px);
     padding: 2px;
     margin-right: 14px;
 }
