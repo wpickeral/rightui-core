@@ -15,7 +15,6 @@
     "build-treeview": "yarn workspace @rightui/treeview build",
     "storybook-treeview": "yarn workspace @rightui/treeview storybook",
     "buildPackages": "yarn build-switch & yarn build-treeview",
-    "testPackages": "yarn test-switch & yarn test-treeview",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "build-storybook-docs": "build-storybook --docs",
     "publish-all": "yarn workspace @rightui/switch npm publish --access public && yarn workspace @rightui/treeview npm publish --access public"
@@ -26,5 +25,8 @@
     "switch",
     "treeview",
     "accessibility"
-  ]
+  ],
+  "dependencies": {
+    "@testing-library/user-event": "^14.4.3"
+  }
 }
