@@ -1,87 +1,89 @@
 import {Switch} from './Switch';
-import {render, screen} from '@testing-library/react';
+
+import {fireEvent, render, screen} from '@testing-library/react';
 import React from 'react';
+import userEvent from "@testing-library/user-event";
 
-test('Switch renders with button element', () => {
+describe('Switch', () => {
 
-  render(<Switch checked={false} onChecked={() => {}}
-                 buttonProps={{
-                   id: 'test-switch-button'
-                 }}
-                 label='Enable notifications'
-  />);
+    const Button = ({inputCheckbox, describedBy}: { inputCheckbox?: boolean, describedBy?: string }) => {
+        return (
+            <Switch inputCheckbox={inputCheckbox} description={describedBy} checked={false} onChecked={() => {
+            }} label='Enable notifications'/>
+        )
+    }
 
-  const button = screen.getByRole('switch');
+    it('renders', () => {
+        render(<Button/>);
+        expect(screen.getByText('Enable notifications')).toBeInTheDocument();
+    });
 
-  const label = screen.getByText('Enable notifications');
+    it('has the role of switch', () => {
+        render(<Button/>);
+        expect(screen.getByRole('switch')).toBeInTheDocument();
+    })
 
-  expect(button).toBeInTheDocument();
-  expect(button).toHaveAttribute('type', 'button');
-  expect(button).toHaveAttribute('aria-checked', 'false');
-  expect(button).toHaveAttribute('aria-labelledby', 'uis-switch-label');
-  expect(button).
-    not.
-    toHaveAttribute('aria-describedby', 'uis-switch-description');
-  expect(button).toHaveAttribute('class', 'uis-switch__button');
-  expect(button).not.toHaveAttribute('class', 'uis-switch__button--checked');
-  expect(button).toHaveAttribute('id', 'test-switch-button');
-  expect(label).toBeInTheDocument();
-});
+    it('has and accessible label', () => {
+        render(<Button/>);
+        expect(screen.getByLabelText('Enable notifications')).toBeInTheDocument();
+    })
 
-test('Switch (button) renders label and description', () => {
+    describe('when checked', () => {
+        it('has sate aria-checked set to true', () => {
+            render(<Button/>);
+            const button = screen.getByRole('switch')
+            fireEvent.click(button);
+            expect(button).toHaveAttribute('aria-checked', 'true');
+        })
+    })
 
-  render(<Switch checked={false} onChecked={() => {}}
-                 label='Enable notifications'
-                 description='Enable notifications to get notified of updates'
-  />);
+    describe('when unchecked', () => {
+        it('has sate aria-checked set to true', () => {
+            render(<Button/>);
+            const button = screen.getByRole('switch')
+            fireEvent.click(button);
+            expect(button).toHaveAttribute('aria-checked', 'true');
+        })
+    })
 
-  const button = screen.getByRole('switch');
-  const label = screen.getByText('Enable notifications');
-  const description = screen.getByText(
-    'Enable notifications to get notified of updates');
+    describe('When the switch element is a checkbox', () => {
+        it('uses the HTML checked attribute instead of the aria-checked property', () => {
+            render(<Button data-testid='switch-checkbox' inputCheckbox={true}/>);
+            const button = screen.getByRole('switch')
+            fireEvent.click(button);
+            expect(button).toHaveAttribute('checked');
+        })
+    })
 
-  expect(button).toHaveAttribute('aria-describedby', 'uis-switch-description');
-  expect(label).toBeInTheDocument();
-  expect(description).toBeInTheDocument();
-});
+    describe('When the switch includes additional descriptive static text', () => {
+        it('has the property aria-describedby set to the id of the element containing the static text', () => {
+            const description = 'Get notified when we post new blog posts'
+            render(<Button data-testid='switch-checkbox' describedBy={description}/>);
+            const button = screen.getByRole('switch')
+            const descriptionId = screen.getByText(description).getAttribute('id')
+            expect(button).toHaveAttribute('aria-describedby', descriptionId)
+        })
+    })
 
-test('Switch renders with input[type="checkbox] element', () => {
+    // Keyboard interaction
+    describe('When the switch is focused', () => {
+        it('can be toggled by pressing the space key', async () => {
+            const user = userEvent.setup();
+            render(<Button/>);
+            const button = screen.getByRole('switch')
+            await user.type(button, '{space}');
+            expect(button).toHaveAttribute('aria-checked', 'true');
+        })
+    })
 
-  render(<Switch checked={false} onChecked={() => {}}
-                 inputCheckbox
-                 inputCheckboxProps={{
-                   name: 'enable-notifications',
-                   value: 'yes'
-                 }}
-                 label='Enable notifications' />);
-
-  const checkbox = screen.getByRole('switch');
-  const label = screen.getByText('Enable notifications');
-
-  expect(checkbox).toBeInTheDocument();
-  expect(checkbox).toHaveAttribute('type', 'checkbox');
-  expect(checkbox).toHaveAttribute('aria-labelledby', 'uis-switch-label');
-  expect(checkbox).toHaveAttribute('name', 'enable-notifications');
-  expect(checkbox).toHaveAttribute('value', 'yes');
-  expect(checkbox).not.toHaveAttribute('checked');
-
-  expect(label).toBeInTheDocument();
-});
-
-test('Switch (input[type="checkbox"]) renders label and description', () => {
-
-  render(<Switch checked={false} onChecked={() => {}}
-                 inputCheckbox
-                 label='Enable notifications'
-                 description='Enable notifications to get notified of updates'
-  />);
-
-  const button = screen.getByRole('switch');
-  const label = screen.getByText('Enable notifications');
-  const description = screen.getByText(
-    'Enable notifications to get notified of updates');
-
-  expect(button).toHaveAttribute('aria-describedby', 'uis-switch-description');
-  expect(label).toBeInTheDocument();
-  expect(description).toBeInTheDocument();
-});
+    describe('When the switch is focused', () => {
+        it('can be toggled by pressing the enter key', async () => {
+            const user = userEvent.setup();
+            render(<Button/>);
+            const button = screen.getByRole('switch')
+            button.focus()
+            await user.keyboard('{enter}');
+            expect(button).toHaveAttribute('aria-checked', 'true');
+        })
+    })
+})
