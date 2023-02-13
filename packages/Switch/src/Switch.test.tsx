@@ -87,8 +87,10 @@ describe('Switch', () => {
 
             render(<Switch checked={false} description={description} onChecked={() => {
             }} label='Enable notifications'/>)
+
             const button = screen.getByRole('switch')
             const descriptionId = screen.getByText(description).getAttribute('id')
+
             expect(button).toHaveAttribute('aria-describedby', descriptionId)
         })
     })
