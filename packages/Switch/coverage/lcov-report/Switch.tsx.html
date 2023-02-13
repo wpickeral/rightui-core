@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.36% </span>
+                <span class="strong">95.45% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>19/22</span>
+                <span class='fraction'>21/22</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">82.35% </span>
+                <span class="strong">94.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>14/17</span>
+                <span class='fraction'>16/17</span>
             </div>
         
             
@@ -274,32 +274,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">19x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -444,7 +444,7 @@ export type SwitchProps = {
   /**
    * Props to pass to the button element.
    */
-  buttonProps?: React.ButtonHTMLAttributes&lt;HTMLButtonElement&gt;;
+  buttonProps?: React.SwitchHTMLAttributes&lt;HTMLSwitchElement&gt;;
 }
 &nbsp;
 export const Switch = ({
@@ -459,9 +459,9 @@ export const Switch = ({
 &nbsp;
       const [checkedState, setCheckedState] = React.useState(checked);
 &nbsp;
-      function <span class="fstat-no" title="function not covered" >toggleCheckedState(</span>e: React.MouseEvent&lt;HTMLSpanElement&gt;) {
-<span class="cstat-no" title="statement not covered" >        onChecked(!checkedState);</span>
-<span class="cstat-no" title="statement not covered" >        setCheckedState(!checkedState);</span>
+      function toggleCheckedState(e: React.MouseEvent&lt;HTMLSpanElement&gt;) {
+        onChecked(!checkedState);
+        setCheckedState(!checkedState);
       }
 &nbsp;
       // If the checked prop changes, update the checked state
@@ -480,7 +480,7 @@ export const Switch = ({
                   {inputCheckbox ?
                       &lt;div onClick={toggleCheckedState}
                            className={`uis-switch__button ${checkedState
-                               ? <span class="branch-0 cbranch-no" title="branch not covered" >'uis-switch__button--checked'</span>
+                               ? 'uis-switch__button--checked'
                                : ''}`.trim()}&gt;
                         &lt;input
                             {...inputCheckboxProps}
@@ -496,7 +496,7 @@ export const Switch = ({
                       &lt;button
                           {...buttonProps}
                           className={`uis-switch__button ${checkedState
-                              ? <span class="branch-0 cbranch-no" title="branch not covered" >'uis-switch__button--checked'</span>
+                              ? 'uis-switch__button--checked'
                               : ''}`.trim()}
                           aria-labelledby='uis-switch-label'
                           role='switch'
@@ -519,10 +519,10 @@ export const Switch = ({
             {description &amp;&amp; label ?
                 &lt;&gt;
                   {inputCheckbox ?
-                      &lt;&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >                      &lt;&gt;</span>
                         &lt;div onClick={toggleCheckedState}
                              className={`uis-switch__button ${checkedState
-                                 ? <span class="branch-0 cbranch-no" title="branch not covered" >'uis-switch__button--checked'</span>
+                                 ? 'uis-switch__button--checked'
                                  : ''}`.trim()}&gt;
                           &lt;input
                               {...inputCheckboxProps}
@@ -592,7 +592,7 @@ export const Switch = ({
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-02-11T06:23:10.558Z
+                at 2023-02-13T13:45:03.229Z
             </div>
         <script src="prettify.js"></script>
         <script>
@@ -604,4 +604,3 @@ export const Switch = ({
         <script src="block-navigation.js"></script>
     </body>
 </html>
-    

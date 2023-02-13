@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676096590562" clover="3.2.0">
-  <project timestamp="1676096590562" name="All files">
-    <metrics statements="17" coveredstatements="14" conditionals="26" coveredconditionals="20" methods="3" coveredmethods="2" elements="46" coveredelements="36" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1"/>
+<coverage generated="1676295903228" clover="3.2.0">
+  <project timestamp="1676295903228" name="All files">
+    <metrics statements="17" coveredstatements="16" conditionals="26" coveredconditionals="20" methods="3" coveredmethods="3" elements="46" coveredelements="39" complexity="0" loc="17" ncloc="17" packages="1" files="1" classes="1"/>
     <file name="Switch.tsx" path="/Users/williampickeral/WebstormProjects/rightui-core/packages/Switch/src/Switch.tsx">
-      <metrics statements="17" coveredstatements="14" conditionals="26" coveredconditionals="20" methods="3" coveredmethods="2"/>
+      <metrics statements="17" coveredstatements="16" conditionals="26" coveredconditionals="20" methods="3" coveredmethods="3"/>
       <line num="4" count="1" type="stmt"/>
       <line num="37" count="1" type="stmt"/>
-      <line num="38" count="4" type="cond" truecount="1" falsecount="1"/>
-      <line num="39" count="4" type="stmt"/>
-      <line num="40" count="4" type="stmt"/>
-      <line num="41" count="4" type="stmt"/>
-      <line num="42" count="4" type="cond" truecount="2" falsecount="0"/>
-      <line num="43" count="4" type="stmt"/>
-      <line num="44" count="4" type="stmt"/>
-      <line num="47" count="4" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
-      <line num="51" count="0" type="stmt"/>
-      <line num="55" count="4" type="stmt"/>
-      <line num="56" count="4" type="cond" truecount="1" falsecount="1"/>
+      <line num="38" count="19" type="cond" truecount="1" falsecount="1"/>
+      <line num="39" count="19" type="stmt"/>
+      <line num="40" count="19" type="stmt"/>
+      <line num="41" count="19" type="stmt"/>
+      <line num="42" count="19" type="cond" truecount="2" falsecount="0"/>
+      <line num="43" count="19" type="stmt"/>
+      <line num="44" count="19" type="stmt"/>
+      <line num="47" count="19" type="stmt"/>
+      <line num="50" count="5" type="stmt"/>
+      <line num="51" count="5" type="stmt"/>
+      <line num="55" count="19" type="stmt"/>
+      <line num="56" count="9" type="cond" truecount="1" falsecount="1"/>
       <line num="57" count="0" type="stmt"/>
-      <line num="59" count="4" type="stmt"/>
-      <line num="63" count="4" type="stmt"/>
+      <line num="59" count="9" type="stmt"/>
+      <line num="63" count="19" type="stmt"/>
     </file>
   </project>
 </coverage>
