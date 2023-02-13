@@ -1,6 +1,6 @@
 {
   "name": "@rightui/switch",
-  "version": "0.1.26",
+  "version": "0.1.27",
   "repository": "https://github.com/wpickeral/rightui-core/tree/main/packages/Switch",
   "description": "An unstyled and keyboard friendly Switch component for your React App.",
   "main": "dist/cjs/index.js",

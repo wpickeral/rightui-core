@@ -17,6 +17,8 @@
     "buildPackages": "yarn build-switch & yarn build-treeview",
     "storybook-docs": "start-storybook --docs --no-manager-cache",
     "build-storybook-docs": "build-storybook --docs",
+    "publish-switch": "yarn build-switch && yarn workspace @rightui/switch npm publish --access public",
+    "publish-treeview": "yarn workspace @rightui/treeview npm publish --access public",
     "publish-all": "yarn workspace @rightui/switch npm publish --access public && yarn workspace @rightui/treeview npm publish --access public"
   },
   "keywords": [
