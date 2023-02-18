@@ -338,21 +338,26 @@ export function TreeItem({
     };
 
     const handleAtoZKey = (e: React.KeyboardEvent) => {
-        if (!Object.values(keyCode).includes(e.key)) {
-            const query = e.key;
-            const currentNode = e.currentTarget as HTMLLIElement;
-            // Focus moves to the next node with a name that starts with the typed character.
-            const nextMatchingTreeItem = getNextTreeItemThatStartsWithChar(
-                currentNode,
-                query);
+            // These keys have special functions on the treeview component and should not be used for searching.
+            if (e.key === keyCode.ASTERISK || e.key === keyCode.HOME || e.key === keyCode.END || e.key === keyCode.SHIFT) {
+                return;
+            }
+            if (!Object.values(keyCode).includes(e.key)) {
+                const query = e.key;
+                const currentNode = e.currentTarget as HTMLLIElement;
+                // Focus moves to the next node with a name that starts with the typed character.
+                const nextMatchingTreeItem = getNextTreeItemThatStartsWithChar(
+                    currentNode,
+                    query);
 
-            if (nextMatchingTreeItem) {
-                moveFocusToTreeItem(nextMatchingTreeItem as HTMLLIElement);
-            } else {
-                searchWrap(query, currentNode);
+                if (nextMatchingTreeItem) {
+                    moveFocusToTreeItem(nextMatchingTreeItem as HTMLLIElement);
+                } else {
+                    searchWrap(query, currentNode);
+                }
             }
         }
-    };
+    ;
 
     const handleEnterOrSpaceKey = (
         e: React.KeyboardEvent) => {

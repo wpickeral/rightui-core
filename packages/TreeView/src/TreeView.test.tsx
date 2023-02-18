@@ -338,7 +338,7 @@ test('type-ahead: Search ignores nodes that are descendants of closed nodes.', a
 
 test('Asterisk (*) key expands all closed nodes that are descendants of the focused node. Focus does not move', async () => {
     render(<TestTree/>);
-    const menu = screen.getByText('Menu').closest('li')
+    const menu = screen.getByText('AnotherMenu').closest('li')
 
     menu?.focus();
     await user.keyboard('*');
