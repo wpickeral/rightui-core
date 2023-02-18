@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A collection of unstyled and keyboard friendly UI components for your React App.",
   "private": true,
+  "license": "MIT",
   "outDir": "dist",
   "workspaces": [
     "packages/*"
