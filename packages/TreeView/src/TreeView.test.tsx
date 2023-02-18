@@ -20,7 +20,6 @@ const user = userEvent.setup();
 
 test('it renders', () => {
     render(<TestTree/>);
-    screen.debug()
     expect(screen.getByRole('tree')).toBeInTheDocument();
 })
 
@@ -331,9 +330,8 @@ test('type-ahead: Search ignores nodes that are descendants of closed nodes.', a
     const menu = screen.getByText('Menu').closest('li')
 
     menu?.focus();
-    await user.keyboard('{ArrowRight}');
     await user.keyboard('S');
-    expect(screen.getByText('SubMenu').closest('li')).toHaveFocus();
+    expect(menu).toHaveFocus();
 })
 
 test('Asterisk (*) key expands all closed nodes that are descendants of the focused node. Focus does not move', async () => {
