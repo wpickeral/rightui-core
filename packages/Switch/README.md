@@ -16,11 +16,11 @@ import Switch from '@rightui/switch';
 const [isChecked, setIsChecked] = useState(false);
 
 const App = () => (
-  <Switch
-    label='Enable Notifications'
-    checked={isChecked}
-    onChecked={(checked) => setIsChecked(checked)}
-  />
+    <Switch
+        label='Enable Notifications'
+        checked={isChecked}
+        onChecked={(checked) => setIsChecked(checked)}
+    />
 );
 ```
 
@@ -28,5 +28,10 @@ const App = () => (
 
 [View full documentation](https://rightui-core-storybook.vercel.app/?path=/docs/switch--with-label)
 
+## Example
+
+Checkout the component in  [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
+
 ## Accessibility
+
 Follows the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/switch/).

@@ -11,18 +11,22 @@ An unstyled, lightweight, keyboard-friendly Tree View component for your React a
 ## Usage
 
 ```jsx 
-import { Tree, TreeItem } from '@rightui/treeview';
+import {Tree, TreeItem} from '@rightui/treeview';
 
 const App = () => (
-  <Tree label='Menu'>
-    <TreeItem content="Options" ariaLevel={1}>
-      <TreeItem content="Option 1" ariaLevel={2}/>
-      <TreeItem content="Option 2" ariaLevel={2}/>
-    </TreeItem>
-    <TreeItem content="Settings" ariaLevel={1}/>
-  </Tree>
+    <Tree label='Menu'>
+        <TreeItem content="Options" ariaLevel={1}>
+            <TreeItem content="Option 1" ariaLevel={2}/>
+            <TreeItem content="Option 2" ariaLevel={2}/>
+        </TreeItem>
+        <TreeItem content="Settings" ariaLevel={1}/>
+    </Tree>
 );
 ```
+
+## Example
+
+Checkout the component in [Sandbox](https://codesandbox.io/s/silly-panka-hdqyr8?file=/src/App.js).
 
 ## Documentation
 
@@ -31,3 +35,6 @@ const App = () => (
 ## Accessibility
 
 Follows the [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/).
+
+
+
