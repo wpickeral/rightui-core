@@ -39,7 +39,7 @@ export function Tree({
         }
     }, []);
 
-    const visibleLabelProps = {id: 'rightui-treeview-label', className: 'uis-tree__label'}
+    const visibleLabelProps = {id: 'rightui-treeview-label', className: 'rui-tree__label'}
     return (
         <>
             {label ?
@@ -67,7 +67,7 @@ export function Tree({
 
             <ul
                 ref={treeRef}
-                className='uis-tree'
+                className='rui-tree'
                 aria-labelledby={label ? 'rightui-treeview-label' : undefined}
                 aria-label={ariaLabel ? ariaLabel : undefined}
                 role='tree'>

@@ -1,6 +1,6 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import {Canvas, Meta, Story} from '@storybook/addon-docs'
 import './styles.css'
-import { Switch } from './Switch'
+import {Switch} from './Switch'
 
 <Meta title="Switch" component={Switch}/>
 
@@ -55,13 +55,13 @@ Helper classes are available for styling the component.
 
 | class                                    | description                                                                                                   |
 |------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| `uis-switch`                             | The switch container                                                                                          |
-| `uis_switch__button`                     | The switch button or input element                                                                            |
-| `uis_switch__button--checked`            | The switch is enabled                                                                                         |
-| `uis_switch__toggle--indicator`          | The switch toggle indicator                                                                                   |
-| `uis-switch__label`                      | The switch label                                                                                              |
-| `uis-switch__description`                | The switch description                                                                                        |
-| `uis-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
+| `rui-switch`                             | The switch container                                                                                          |
+| `rui_switch__button`                     | The switch button or input element                                                                            |
+| `rui_switch__button--checked`            | The switch is enabled                                                                                         |
+| `rui_switch__toggle--indicator`          | The switch toggle indicator                                                                                   |
+| `rui-switch__label`                      | The switch label                                                                                              |
+| `rui-switch__description`                | The switch description                                                                                        |
+| `rui-switch-label-description-container` | The container for the label and description. Only available if the label and description props are available. |
 
 ## With label
 View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
@@ -69,28 +69,28 @@ View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 export const Template = (args) => <Switch {...args}/>
 export const WithLabel = Template.bind({})
 WithLabel.args = {
-  label: 'Enable Notifications',
+    label: 'Enable Notifications',
 }
 
 
 
 export const WithLabelAndDescription = Template.bind({})
 WithLabelAndDescription.args = {
-  label: 'Enable Notifications',
-  description: 'Get notified when something important happens.',
+    label: 'Enable Notifications',
+    description: 'Get notified when something important happens.',
 }
 
 <Canvas>
-  <Story name="With label">
-    {WithLabel}
-  </Story>
+    <Story name="With label">
+        {WithLabel}
+    </Story>
 </Canvas>
 
 ## With label and description
 <Canvas>
-  <Story name="With label and description">
-    {WithLabelAndDescription}
-  </Story>
+    <Story name="With label and description">
+        {WithLabelAndDescription}
+    </Story>
 </Canvas>
 
 
