@@ -1,6 +1,6 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import {Canvas, Meta, Story} from '@storybook/addon-docs'
 import './styles.css'
-import { Switch } from './Switch'
+import {Switch} from './Switch'
 
 <Meta title="Switch" component={Switch}/>
 
@@ -69,28 +69,28 @@ View in [Sandbox](https://codesandbox.io/s/nifty-sun-7o2iev).
 export const Template = (args) => <Switch {...args}/>
 export const WithLabel = Template.bind({})
 WithLabel.args = {
-  label: 'Enable Notifications',
+    label: 'Enable Notifications',
 }
 
 
 
 export const WithLabelAndDescription = Template.bind({})
 WithLabelAndDescription.args = {
-  label: 'Enable Notifications',
-  description: 'Get notified when something important happens.',
+    label: 'Enable Notifications',
+    description: 'Get notified when something important happens.',
 }
 
 <Canvas>
-  <Story name="With label">
-    {WithLabel}
-  </Story>
+    <Story name="With label">
+        {WithLabel}
+    </Story>
 </Canvas>
 
 ## With label and description
 <Canvas>
-  <Story name="With label and description">
-    {WithLabelAndDescription}
-  </Story>
+    <Story name="With label and description">
+        {WithLabelAndDescription}
+    </Story>
 </Canvas>
 
 
