@@ -20,7 +20,16 @@ const user = userEvent.setup();
 
 test('it renders', () => {
     render(<TestTree/>);
+    screen.debug()
     expect(screen.getByRole('tree')).toBeInTheDocument();
+})
+
+test('all tree nodes are focusable', async () => {
+    render(<TestTree/>);
+    expect(screen.getByText('Menu').closest('li')).toHaveAttribute('tabindex', '0');
+    screen.getAllByRole('treeitem').forEach(treeitem => {
+        expect(treeitem.closest('li')).toHaveAttribute('tabindex')
+    })
 })
 
 test('Sub treeitems are collapsed on initial render', () => {
@@ -195,7 +204,7 @@ test('When focus is on a closed node, pressing the right arrow key opens the nod
     expect(screen.queryByText('SubMenu')).toBeInTheDocument();
     expect(menu).toHaveFocus();
 })
-test('When focus is on a open node, pressing the left arrow key closes the node; focus does not move.', async () => {
+test('When focus is on an open node, right arrow moves focus to the first child node.', async () => {
 
     render(<TestTree/>);
     const menu = screen.getByText('Menu').closest('li')
@@ -203,8 +212,137 @@ test('When focus is on a open node, pressing the left arrow key closes the node;
     menu?.focus();
 
     await user.keyboard('{ArrowRight}');
+    await user.keyboard('{ArrowRight}');
+    expect(screen.queryByText('SubMenu')).toBeInTheDocument();
+    expect(screen.getByText('SubMenu').closest('[role=treeitem]')).toHaveFocus();
+})
+
+test('When focus is on an end node, right arrow does nothing.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('AnotherMenu').closest('li')
+
+    menu?.focus();
+
+    await user.keyboard('{ArrowRight}');
+    expect(menu).toHaveFocus();
+})
+
+
+test('When focus is on a open node, pressing the left arrow key closes the node; focus does not move.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{ArrowRight}');
     await user.keyboard('{ArrowLeft}');
     expect(screen.queryByText('SubMenu')).not.toBeInTheDocument();
+    expect(menu).toHaveFocus();
+})
+
+test('When focus is on a child node that is also either and end node or a closed node, pressing the left arrow key moves focus to its parent node.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{ArrowRight}');
+
+    const subMenu = screen.getByText('SubMenu').closest('li')
+    await user.keyboard('{ArrowLeft}');
+
+    await user.keyboard('{ArrowLeft}');
+    expect(subMenu).not.toBeInTheDocument();
+    expect(menu).toHaveFocus();
+})
+
+test('When focus is on a root node that is also either an end node or a closed node, pressing the left arrow key does nothing.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('AnotherMenu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{ArrowLeft}');
+    expect(menu).toHaveFocus();
+})
+
+test('Down arrow moves focus to the next node that is focusable without opening or closing a node.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{ArrowDown}');
+    expect(screen.getByText('AnotherMenu').closest('li')).toHaveFocus();
+})
+
+test('Up arrow moves focus to the previous node that is focusable without opening or closing a node.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('AnotherMenu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{ArrowUp}');
+    expect(screen.getByText('Menu').closest('li')).toHaveFocus();
+})
+
+test('Home key moves focus to first node without opening or closing a node.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('AnotherMenu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{Home}');
+    expect(screen.getByText('Menu').closest('li')).toHaveFocus();
+})
+
+test('End key moves focus to last node without opening or closing a node.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{End}');
+    expect(screen.getByText('AnotherMenu').closest('li')).toHaveFocus();
+})
+
+test('Enter or Space key activates the focused node. ', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{Enter}');
+    expect(menu).toHaveAttribute('aria-selected', 'true');
+})
+
+test('type-ahead: type a character, focus moves to the next node with a name that starts with that character.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('A');
+    expect(screen.getByText('AnotherMenu').closest('li')).toHaveFocus();
+})
+
+test('type-ahead: Search wraps to first node if matching name is not found among the nodes that follow the focused node.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('AnotherMenu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('B');
+    expect(screen.getByText('Menu').closest('li')).toHaveFocus();
+})
+
+test('type-ahead: Search ignores nodes that are descendants of closed nodes.', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('{ArrowRight}');
+    await user.keyboard('S');
+    expect(screen.getByText('SubMenu').closest('li')).toHaveFocus();
+})
+
+test('Asterisk (*) key expands all closed nodes that are descendants of the focused node. Focus does not move', async () => {
+    render(<TestTree/>);
+    const menu = screen.getByText('Menu').closest('li')
+
+    menu?.focus();
+    await user.keyboard('*');
+    expect(screen.getByText('SubMenu')).toBeInTheDocument();
     expect(menu).toHaveFocus();
 })
 
