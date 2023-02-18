@@ -20,7 +20,6 @@ const user = userEvent.setup();
 
 test('it renders', () => {
     render(<TestTree/>);
-    screen.debug()
     expect(screen.getByRole('tree')).toBeInTheDocument();
 })
 
