@@ -1,6 +1,6 @@
 {
   "name": "@rightui/treeview",
-  "version": "0.4.35",
+  "version": "0.4.36",
   "repository": "https://github.com/wpickeral/rightui-core/tree/main/packages/TreeView",
   "description": "An unstyled and keyboard friendly Tree View component for your React App.",
   "main": "dist/cjs/index.js",
