@@ -474,42 +474,42 @@ export const Switch = ({
       }, [checked]);
 &nbsp;
       return (
-          &lt;div className='uis-switch'&gt;
+          &lt;div className='rui-switch'&gt;
             {label &amp;&amp; !description ? (
                 &lt;&gt;
                   {inputCheckbox ?
                       &lt;div onClick={toggleCheckedState}
-                           className={`uis-switch__button ${checkedState
-                               ? 'uis-switch__button--checked'
+                           className={`rui-switch__button ${checkedState
+                               ? 'rui-switch__button--checked'
                                : ''}`.trim()}&gt;
                         &lt;input
                             {...inputCheckboxProps}
-                            aria-labelledby='uis-switch-label'
+                            aria-labelledby='rui-switch-label'
                             role='switch'
                             type='checkbox'
                             defaultChecked={checkedState}
                         /&gt;
-                        &lt;span className={`uis-switch__toggle-indicator`}
+                        &lt;span className={`rui-switch__toggle-indicator`}
                               aria-hidden='true'/&gt;
                       &lt;/div&gt;
                       :
                       &lt;button
                           {...buttonProps}
-                          className={`uis-switch__button ${checkedState
-                              ? 'uis-switch__button--checked'
+                          className={`rui-switch__button ${checkedState
+                              ? 'rui-switch__button--checked'
                               : ''}`.trim()}
-                          aria-labelledby='uis-switch-label'
+                          aria-labelledby='rui-switch-label'
                           role='switch'
                           type='button'
                           aria-checked={checkedState}
                           onClick={toggleCheckedState}&gt;
-            &lt;span className={`uis-switch__toggle-indicator`}
+            &lt;span className={`rui-switch__toggle-indicator`}
                   aria-hidden='true'/&gt;
                       &lt;/button&gt;
                   }
                   &lt;span
-                      id='uis-switch-label'
-                      className='uis-switch__label'
+                      id='rui-switch-label'
+                      className='rui-switch__label'
                       onClick={toggleCheckedState}&gt;
             {label}
           &lt;/span&gt;
@@ -521,30 +521,30 @@ export const Switch = ({
                   {inputCheckbox ?
 <span class="branch-0 cbranch-no" title="branch not covered" >                      &lt;&gt;</span>
                         &lt;div onClick={toggleCheckedState}
-                             className={`uis-switch__button ${checkedState
-                                 ? 'uis-switch__button--checked'
+                             className={`rui-switch__button ${checkedState
+                                 ? 'rui-switch__button--checked'
                                  : ''}`.trim()}&gt;
                           &lt;input
                               {...inputCheckboxProps}
-                              aria-labelledby='uis-switch-label'
-                              aria-describedby='uis-switch-description'
+                              aria-labelledby='rui-switch-label'
+                              aria-describedby='rui-switch-description'
                               role='switch'
                               type='checkbox'
                               defaultChecked={checkedState}
                           /&gt;
-                          &lt;span className={`uis-switch__toggle-indicator`}
+                          &lt;span className={`rui-switch__toggle-indicator`}
                                 aria-hidden='true'/&gt;
                         &lt;/div&gt;
-                        &lt;div className='uis-switch-label-description-container'&gt;
+                        &lt;div className='rui-switch-label-description-container'&gt;
               &lt;span
-                  id='uis-switch-label'
-                  className='uis-switch__label'
+                  id='rui-switch-label'
+                  className='rui-switch__label'
                   onClick={toggleCheckedState}&gt;
             {label}
               &lt;/span&gt;
                           &lt;span
-                              id='uis-switch-description'
-                              className='uis-switch__description'
+                              id='rui-switch-description'
+                              className='rui-switch__description'
                               onClick={toggleCheckedState}&gt;
             {description}
               &lt;/span&gt;
@@ -552,28 +552,28 @@ export const Switch = ({
                       &lt;/&gt;
                       :
                       &lt;&gt;
-                        &lt;button className={`uis-switch__button ${checkedState
-                            ? <span class="branch-0 cbranch-no" title="branch not covered" >'uis-switch__button--checked'</span>
+                        &lt;button className={`rui-switch__button ${checkedState
+                            ? <span class="branch-0 cbranch-no" title="branch not covered" >'rui-switch__button--checked'</span>
                             : ''}`.trim()}
-                                aria-labelledby='uis-switch-label'
-                                aria-describedby='uis-switch-description'
+                                aria-labelledby='rui-switch-label'
+                                aria-describedby='rui-switch-description'
                                 role='switch'
                                 type='button'
                                 aria-checked={checkedState}
                                 onClick={toggleCheckedState}&gt;
-            &lt;span className={`uis-switch__toggle-indicator`}
+            &lt;span className={`rui-switch__toggle-indicator`}
                   aria-hidden='true'/&gt;
                         &lt;/button&gt;
-                        &lt;div className='uis-switch-label-description-container'&gt;
+                        &lt;div className='rui-switch-label-description-container'&gt;
               &lt;span
-                  id='uis-switch-label'
-                  className='uis-switch__label'
+                  id='rui-switch-label'
+                  className='rui-switch__label'
                   onClick={toggleCheckedState}&gt;
             {label}
               &lt;/span&gt;
                           &lt;span
-                              id='uis-switch-description'
-                              className='uis-switch__description'
+                              id='rui-switch-description'
+                              className='rui-switch__description'
                               onClick={toggleCheckedState}&gt;
             {description}
               &lt;/span&gt;
@@ -604,4 +604,3 @@ export const Switch = ({
         <script src="block-navigation.js"></script>
     </body>
 </html>
-    

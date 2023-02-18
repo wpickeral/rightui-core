@@ -12,15 +12,15 @@ export const keyCode = {
 };
 
 export const classes = {
-  tree: '.uis-tree',
-  treeItem: '.uis-tree-item',
-  treeItemLabel: '.uis-tree-item-label',
-  treeItemContent: '.uis-tree-item__content',
-  treeGroup: 'uis-tree--subtree',
-  treeItemFocus: 'uis-tree-item--focus',
-  treeItemSelected: 'uis-tree-item--selected',
-  treeItemExpanded: 'uis-tree-item--expanded',
-  treeItemCollapsed: 'uis-tree-item--collapsed',
+  tree: '.rui-tree',
+  treeItem: '.rui-tree-item',
+  treeItemLabel: '.rui-tree-item-label',
+  treeItemContent: '.rui-tree-item__content',
+  treeGroup: 'rui-tree--subtree',
+  treeItemFocus: 'rui-tree-item--focus',
+  treeItemSelected: 'rui-tree-item--selected',
+  treeItemExpanded: 'rui-tree-item--expanded',
+  treeItemCollapsed: 'rui-tree-item--collapsed',
 };
 
 

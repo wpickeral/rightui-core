@@ -6,24 +6,24 @@
     --font-color: hsl(0, 0%, 0%);
 }
 
-.uis-tree {
+.rui-tree {
     list-style: none;
 }
 
-.uis-tree__label {
+.rui-tree__label {
     padding-bottom: 16px;
     font-size: 14px;
     color: #4D4D4D;
 }
 
-.uis-tree-item {
+.rui-tree-item {
     border-radius: 5px;
     font-size: 14px;
     outline: none;
     list-style: none;
 }
 
-.uis-tree-item__content {
+.rui-tree-item__content {
     background-color: transparent;
     border: none;
     display: flex;
@@ -34,16 +34,16 @@
     border-radius: 5px;
 }
 
-.uis-tree-item__content:hover, .uis-tree-item--focus > .uis-tree-item__content {
+.rui-tree-item__content:hover, .rui-tree-item--focus > .rui-tree-item__content {
     cursor: pointer;
     background-color: #cccccc50;
 }
 
-.uis-tree-item--selected > .uis-tree-item__content {
+.rui-tree-item--selected > .rui-tree-item__content {
     background-color: #cccccc30;
 }
 
-.uis-tree-item__content svg {
+.rui-tree-item__content svg {
     margin-left: 8px;
     width: 16px;
     height: 16px;

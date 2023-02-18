@@ -42,7 +42,7 @@ export type TreeItemProps = {
 
 export const ChevronRightSVG = () => {
     return (
-        <svg className='uis-tree-item-expand-icon' data-testid='expand-icon'
+        <svg className='rui-tree-item-expand-icon' data-testid='expand-icon'
              xmlns='http://www.w3.org/2000/svg' height='18px'
              viewBox='0 0 24 24' width='18px' fill='currentColor'>
             <path d='M0 0h24v24H0V0z' fill='none'/>
@@ -53,7 +53,7 @@ export const ChevronRightSVG = () => {
 
 export const ChevronDownSVG = () => {
     return (
-        <svg className='uis-tree-item-collapse-icon' data-testid='collapse-icon'
+        <svg className='rui-tree-item-collapse-icon' data-testid='collapse-icon'
              xmlns='http://www.w3.org/2000/svg' height='18px'
              viewBox='0 0 24 24' width='18px' fill='currentColor'>
             <path d='M24 24H0V0h24v24z' fill='none' opacity='.87'/>
@@ -125,11 +125,11 @@ export function TreeItem({
         callback?: () => void) => {
         if (expanded) {
             setExpanded(false);
-            treeItemRef.current?.classList.remove('uis-tree-item--expanded');
+            treeItemRef.current?.classList.remove('rui-tree-item--expanded');
         } else {
             setExpanded(true);
             treeItemRef.current?.setAttribute('aria-expanded', 'true');
-            treeItemRef.current?.classList.add('uis-tree-item--expanded');
+            treeItemRef.current?.classList.add('rui-tree-item--expanded');
         }
         if (callback) {
             callback();
@@ -281,7 +281,7 @@ export function TreeItem({
             const currentLevel = nodeWithFocus.closest('ul')?.firstElementChild?.getAttribute('aria-level');
             // Then we need to get all the siblings of the focused node. We use the aria-level to only get the siblings at the same level.
             const siblingNodes = e.currentTarget.parentElement?.querySelectorAll(
-                `.uis-tree-item[aria-level="${currentLevel}"]`);
+                `.rui-tree-item[aria-level="${currentLevel}"]`);
             // Then we need to get all the closed siblings of the focused node that are at the same level.
             siblingNodes?.forEach((node: Element) => {
                 // Then we need to get all the closed siblings of the focused node that are at the same level.
@@ -416,7 +416,7 @@ export function TreeItem({
             onKeyDown={handleKeyDown}
             onClick={handleClick}
             ref={treeItemRef}
-            className='uis-tree-item'
+            className='rui-tree-item'
             role='treeitem'
             tabIndex={-1}
             aria-level={ariaLevel}
@@ -424,19 +424,19 @@ export function TreeItem({
             aria-selected='false'
         >
             {/*terminal node*/}
-            {!children && <div className='uis-tree-item__content'>{content}</div>}
+            {!children && <div className='rui-tree-item__content'>{content}</div>}
 
             {/*subtrees*/}
             {children && (
                 <>
-                    <div className='uis-tree-item__content'>
+                    <div className='rui-tree-item__content'>
                         {content}
                         {expanded && expandIcon}
                         {!expanded && collapseIcon}
                     </div>
                     {expanded && <ul
                         style={{marginLeft: indent}}
-                        className='uis-tree--subtree'
+                        className='rui-tree--subtree'
                         role='group'>{children}</ul>}
                 </>
             )}
