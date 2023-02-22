@@ -61,42 +61,42 @@ export const Switch = ({
       }, [checked]);
 
       return (
-          <div className='uis-switch'>
+          <div className='rui-switch'>
             {label && !description ? (
                 <>
                   {inputCheckbox ?
                       <div onClick={toggleCheckedState}
-                           className={`uis-switch__button ${checkedState
-                               ? 'uis-switch__button--checked'
+                           className={`rui-switch__button ${checkedState
+                               ? 'rui-switch__button--checked'
                                : ''}`.trim()}>
                         <input
                             {...inputCheckboxProps}
-                            aria-labelledby='uis-switch-label'
+                            aria-labelledby='rui-switch-label'
                             role='switch'
                             type='checkbox'
                             defaultChecked={checkedState}
                         />
-                        <span className={`uis-switch__toggle-indicator`}
+                        <span className={`rui-switch__toggle-indicator`}
                               aria-hidden='true'/>
                       </div>
                       :
                       <button
                           {...buttonProps}
-                          className={`uis-switch__button ${checkedState
-                              ? 'uis-switch__button--checked'
+                          className={`rui-switch__button ${checkedState
+                              ? 'rui-switch__button--checked'
                               : ''}`.trim()}
-                          aria-labelledby='uis-switch-label'
+                          aria-labelledby='rui-switch-label'
                           role='switch'
                           type='button'
                           aria-checked={checkedState}
                           onClick={toggleCheckedState}>
-            <span className={`uis-switch__toggle-indicator`}
+            <span className={`rui-switch__toggle-indicator`}
                   aria-hidden='true'/>
                       </button>
                   }
                   <span
-                      id='uis-switch-label'
-                      className='uis-switch__label'
+                      id='rui-switch-label'
+                      className='rui-switch__label'
                       onClick={toggleCheckedState}>
             {label}
           </span>
@@ -108,30 +108,30 @@ export const Switch = ({
                   {inputCheckbox ?
                       <>
                         <div onClick={toggleCheckedState}
-                             className={`uis-switch__button ${checkedState
-                                 ? 'uis-switch__button--checked'
+                             className={`rui-switch__button ${checkedState
+                                 ? 'rui-switch__button--checked'
                                  : ''}`.trim()}>
                           <input
                               {...inputCheckboxProps}
-                              aria-labelledby='uis-switch-label'
-                              aria-describedby='uis-switch-description'
+                              aria-labelledby='rui-switch-label'
+                              aria-describedby='rui-switch-description'
                               role='switch'
                               type='checkbox'
                               defaultChecked={checkedState}
                           />
-                          <span className={`uis-switch__toggle-indicator`}
+                          <span className={`rui-switch__toggle-indicator`}
                                 aria-hidden='true'/>
                         </div>
-                        <div className='uis-switch-label-description-container'>
+                        <div className='rui-switch-label-description-container'>
               <span
-                  id='uis-switch-label'
-                  className='uis-switch__label'
+                  id='rui-switch-label'
+                  className='rui-switch__label'
                   onClick={toggleCheckedState}>
             {label}
               </span>
                           <span
-                              id='uis-switch-description'
-                              className='uis-switch__description'
+                              id='rui-switch-description'
+                              className='rui-switch__description'
                               onClick={toggleCheckedState}>
             {description}
               </span>
@@ -139,28 +139,28 @@ export const Switch = ({
                       </>
                       :
                       <>
-                        <button className={`uis-switch__button ${checkedState
-                            ? 'uis-switch__button--checked'
+                        <button className={`rui-switch__button ${checkedState
+                            ? 'rui-switch__button--checked'
                             : ''}`.trim()}
-                                aria-labelledby='uis-switch-label'
-                                aria-describedby='uis-switch-description'
+                                aria-labelledby='rui-switch-label'
+                                aria-describedby='rui-switch-description'
                                 role='switch'
                                 type='button'
                                 aria-checked={checkedState}
                                 onClick={toggleCheckedState}>
-            <span className={`uis-switch__toggle-indicator`}
+            <span className={`rui-switch__toggle-indicator`}
                   aria-hidden='true'/>
                         </button>
-                        <div className='uis-switch-label-description-container'>
+                        <div className='rui-switch-label-description-container'>
               <span
-                  id='uis-switch-label'
-                  className='uis-switch__label'
+                  id='rui-switch-label'
+                  className='rui-switch__label'
                   onClick={toggleCheckedState}>
             {label}
               </span>
                           <span
-                              id='uis-switch-description'
-                              className='uis-switch__description'
+                              id='rui-switch-description'
+                              className='rui-switch__description'
                               onClick={toggleCheckedState}>
             {description}
               </span>
