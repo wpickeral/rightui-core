@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event'
 function TestTree() {
     return (
         <Tree ariaLabel='Explorer'>
-            <TreeItem content='Menu' ariaLevel={1} data-testid='menu-test-id'>
+            <TreeItem content='Menu' data-label={'Hello'} ariaLevel={1}>
                 <TreeItem content='SubMenu' ariaLevel={2}/>
             </TreeItem>
             <TreeItem content='AnotherMenu' ariaLevel={2}/>

@@ -5,7 +5,10 @@ import React, {ReactNode, useEffect, useRef, useState,} from 'react';
 import {classes, keyCode} from './lib';
 
 export type TreeItemProps = {
-    id: string;
+    /**
+     * The id of the TreeItem component.
+     */
+    id?: string;
     /**
      *  The margin-left value for the TreeItem. Controls how much the tree item is indented.
      */
