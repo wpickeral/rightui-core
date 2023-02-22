@@ -1,7 +1,7 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs'
+import {Canvas, Meta, Story} from '@storybook/addon-docs'
 import './styles.css'
-import { Tree } from './Tree'
-import { TreeItem } from './TreeItem'
+import {Tree} from './Tree'
+import {TreeItem} from './TreeItem'
 
 <Meta title="Tree View" component={[Tree, TreeItem]}/>
 
@@ -58,6 +58,7 @@ Note: A label is required for accessibility. You can use the `ariaLabel` prop to
 
 | Prop            | Type                                                                                                | Default              | Description                                                                          |
 |-----------------|-----------------------------------------------------------------------------------------------------|----------------------|--------------------------------------------------------------------------------------|
+| `id`            | `string`                                                                                            | -                    | The id of the TreeItem.                                                              |
 | `indent`        | `number`                                                                                            | 16                   | The margin-left value for the TreeItem. Controls how much the tree item is indented. |
 | `ariaLevel`     | `number`                                                                                            | -                    | The aria-level for the Tree Item component.                                          |
 | `content`       | `ReactNode`                                                                                         | -                    | The content of the TreeItem component.                                               |

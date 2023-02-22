@@ -5,6 +5,7 @@ import React, {ReactNode, useEffect, useRef, useState,} from 'react';
 import {classes, keyCode} from './lib';
 
 export type TreeItemProps = {
+    id: string;
     /**
      *  The margin-left value for the TreeItem. Controls how much the tree item is indented.
      */
@@ -95,6 +96,7 @@ const selectTreeItem = (treeItem: HTMLLIElement, callback?: () => void) => {
 };
 
 export function TreeItem({
+                             id,
                              children,
                              content,
                              onSelect,
@@ -418,6 +420,7 @@ export function TreeItem({
 
     return (
         <li
+            id={id}
             onKeyDown={handleKeyDown}
             onClick={handleClick}
             ref={treeItemRef}
